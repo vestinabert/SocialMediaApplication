@@ -14,7 +14,7 @@
 
     <div>
       <div class="dropdown">
-        <a class="text-dark" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="text-dark fs-4" style="text-decoration:none" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           ...
         </a>
 
@@ -27,8 +27,28 @@
 
   </div>
 </div>
-    <% image_tag post.images.last, class: "card-img-top" %>
     <div class="card-body">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <% post.images.each do |img| %>
+            <div class="carousel-item active">
+            <%= image_tag img, class: "d-block w-100"%>
+          <% end %>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
       <p class="card-text"><%= post.caption %></p>
     </div>
     <div class="card-footer">
