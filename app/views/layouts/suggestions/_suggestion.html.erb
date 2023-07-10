@@ -1,0 +1,13 @@
+<div class="d-flex justify-content-between">
+    <div class="d-flex">
+        <%= image_tag 'user-pp.jpg', class: "img-thumbnail rounded-circle", style: "width: 2.5rem" %>
+        <div class="d-flex flex-column mx-2">
+            <small class="fw-bold">Vestina</small>
+            <small class="text-muted" style="font-size:0.7rem">Suggested for you</small>
+        </div>
+    </div>
+
+    <%= link_to root_path, style: "text-decoration:none" do %>
+        <small class="fw-bold text-primary">Follow</small>
+    <% end %>
+</div>
