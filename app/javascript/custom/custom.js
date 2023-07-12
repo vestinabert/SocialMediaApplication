@@ -1,7 +1,13 @@
  import * as FilePond from 'filepond';
  import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 
- FilePond.registerPlugin(FilePondPluginImagePreview);
+ // Import the plugin code
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+
+ FilePond.registerPlugin(
+    FilePondPluginImagePreview, 
+    FilePondPluginFileValidateType
+);
 
  // Get a reference to the file input element
  const inputElement = document.querySelector("#post-images");
@@ -11,5 +17,6 @@
     credits: {},
     storeAsFile:true,
     allowMultiple: true,
-    allowReorder:true
+    allowReorder:true,
+    acceptedFileTypes: ['image/*'],
  });
