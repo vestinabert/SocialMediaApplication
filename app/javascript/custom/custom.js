@@ -4,4 +4,9 @@
  const inputElement = document.querySelector("#post-images");
 
  // Create a FilePond instance
- const pond = FilePond.create(inputElement);
+ const pond = FilePond.create(inputElement, {
+    credits: {},
+    storeAsFile:true,
+    allowMultiple: true,
+    allowReorder:true
+ });
