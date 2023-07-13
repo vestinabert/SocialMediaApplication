@@ -63,5 +63,7 @@
 </div>
 
 <script>
-//post#{post.id}actions-likeBtn
+  document.getElementById("post<%= post.id %>_images").addEventListener("dblclick", function () {
+    document.getElementById("post<%=post.id%>actions-likeBtn").click();
+  })
 </script>
