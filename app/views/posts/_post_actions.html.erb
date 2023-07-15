@@ -9,19 +9,19 @@
     </a>
 
     <!-- Modal -->
-<div class="modal fade" id="post<%= post.id %>_likesModal" tabindex="-1" role="dialog" aria-labelledby="post<%= post.id %>_likesModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade" id="post<%= post.id %>_likesModal" tabindex="-1" aria-labelledby="post<%= post.id %>_likesModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="post<%= post.id %>_likesModalLabel">Post likes</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= post.likers.each dp |liker|%>
-          <%= render "posts/liker" %>
-        <% end %>
+        <div class="d-flex flex-column gap-3">
+          <%= post.likers.each do |liker|%>
+            <%= render "posts/liker", liker: liker %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
