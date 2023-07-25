@@ -33,4 +33,8 @@ class User < ApplicationRecord
     self.accepted_sent_requests.find_by(followed: user)&.destroy
   end
 
+  def cancel_request(user)
+    self.waiting_sent_requests.find_by(followed: user)&.destroy
+  end
+
 end
