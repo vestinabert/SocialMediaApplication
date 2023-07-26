@@ -7,6 +7,10 @@ class UsersController < ApplicationController
         else
           @users = []
         end
+
+        if turbo_frame_request?
+            render partial: "layouts/search_results", locals: {users: @users}
+        end
     
       end
     def show
