@@ -20,13 +20,8 @@
 
         <% end %>
       </div>
-
-        <div class="navbar-collapse gap-4">
-            <a type="button" class="text-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                <i class="fa-regular fa-square-plus fa-xl"></i>
-            </a>
             
-            <div class="dropdown">
+            <div class="dropdown mt-2 mx-2">
                 <i class="fa-regular fa-heart fa-xl" data-bs-toggle="dropdown" aria-expanded="false"></i>
                 <ul class="dropdown-menu p-4">
                     <li><small>Follow requests</small></li>
@@ -53,7 +48,11 @@
                 </ul>
             </div>
 
-            <div class="dropdown">
+            <a type="button" class="text-dark mt-2 mx-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                <i class="fa-regular fa-square-plus fa-xl"></i>
+            </a>
+
+            <div class="dropdown mt-1 mx-2">
                 <a class="" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <% if current_user && current_user.profile_picture.attached? %>
                         <%= image_tag current_user.profile_picture, class: "img-thumbnail rounded-circle", style: "width: 2rem" %>
@@ -74,7 +73,7 @@
                 </ul>
             </div>
 
-        </div>
+        
     </div>
   </div>
 </nav>
