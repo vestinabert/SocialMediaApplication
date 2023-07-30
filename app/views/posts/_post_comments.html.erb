@@ -4,8 +4,8 @@
             <small class="text-muted">View all <%= pluralize(post.comments.count, "comments")%></small>
         </a>
     <% end %>
-    <%= post.comments.last(5).each do |comment|%>
-        <p class="card-text m-0"><%= link_to comment.user, class: "a-decoration-none", data: {turbo: 'false'} do %><span class="fw-bold"><%= comment.user.username %></span> <% end %><%= comment.body %></p>
+    <% post.comments.last(5).each do |comment| %>
+        <p class="card-text m-0"> <%= link_to comment.user, class: "a-decoration-none", data: {turbo: 'false'} do %> <span class="fw-bold"><%= comment.user.username %></span><% end %> <%= comment.body %> </p>
     <% end %>
 
 
@@ -19,7 +19,7 @@
         </div>
         <div class="modal-body">
             <div class="d-flex flex-column gap-3">
-            <%= post.comments.each do |comment|%>
+            <% post.comments.each do |comment|%>
                 <%= render "posts/modal_comments", comment: comment %>
             <% end %>
             </div>
